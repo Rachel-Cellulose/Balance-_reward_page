@@ -4,12 +4,12 @@
   padding-top: 4rem;
   position: relative;
   transition: all 250ms ease;
+  background-color: #fff;
 
   .side_logo {
     display: flex;
     height: 5rem;
     align-items: center;
-    margin-left: 2.5rem;
 
     img {
       height: 80%;
@@ -34,6 +34,7 @@
       transition: all 250ms ease;
       border-radius: 10px;
       width: 100%;
+      color: gray;
     }
     :hover {
       cursor: pointer;
@@ -43,12 +44,21 @@
       background-color: #0c54ab;
       margin-left: 0;
     }
-    
+
     .active::before {
       content: " ";
       width: 8px;
       height: 100%;
-      background-color: #6ea1de;
+      margin-right: calc(1rem - 8px);
+    }
+
+    .menu_tab {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .menu_icon {
+      color: gray;
     }
   }
 }

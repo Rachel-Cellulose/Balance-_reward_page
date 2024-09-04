@@ -18,13 +18,17 @@ const Sidebar = () => {
       <div className="menu_bar">
         {SidebarData.map((item, index) => {
           return (
-            <div className={selected===index? "menu_item active" : "menu_item" }
-            key={index}
-            onClick={() =>setSelected(index)}
+            <div
+              className={selected === index ? "menu_item active" : "menu_item"}
+              key={index}
+              onClick={() => setSelected(index)}
             >
-
-              <item.icon />
-              <span>{item.heading}</span>
+              <div className='menu_tab'>
+                <span className='menu_icon'>
+                  <item.icon />
+                </span>
+                <span>{item.heading}</span>
+              </div>
             </div>
           );
         })}
