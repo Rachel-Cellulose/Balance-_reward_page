@@ -15,11 +15,13 @@ align-items: center;
 .main_container{
   width: 95%;
 height: 95%;
-background-color: rgb(221, 226, 238);
+/* background-color: rgb(22, 68, 175); */
+      background-color: #0c54ab;
+
 display: grid;
 border-radius: 1.2rem;
 overflow: hidden;
 /* background-color: rgb(8 51 68); */
 grid-template-columns: 11rem auto 14rem;
-
+gap: 3rem;
 }
