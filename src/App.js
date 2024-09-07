@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./components/MainPage/Main";
 import Sidebar from "./components/Sidebar";
+import Coupon from "./components/Coupon/Coupon";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="main_container">
         <Sidebar />
         <Main />
+        <Coupon />
       </div>
     </div>
   );
