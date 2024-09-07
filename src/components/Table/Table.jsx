@@ -1,5 +1,5 @@
 import * as React from "react";
-import './Table.scss'
+import "./Table.scss";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -106,7 +106,6 @@ const bookingData = [
   },
 ];
 
-
 const columns = [
   {
     width: 180,
@@ -156,7 +155,7 @@ const VirtuosoTableComponents = {
   TableHead: React.forwardRef((props, ref) => (
     <TableHead {...props} ref={ref} />
   )),
-  TableRow,
+  TableRow: (props) => <TableRow {...props} className="custom-row" />,
   TableBody: React.forwardRef((props, ref) => (
     <TableBody {...props} ref={ref} />
   )),
@@ -173,8 +172,10 @@ function fixedHeaderContent() {
           style={{
             width: column.width,
             fontWeight: "bold",
+            padding: "10px",
+            margin: "20px auto",
             backgroundColor: "#f5f5f5",
-          }} 
+          }}
           sx={{ backgroundColor: "background.paper" }}
         >
           {column.label}
@@ -202,7 +203,7 @@ function rowContent(_index, row) {
 export default function ReactVirtualizedTable() {
   return (
     <div className="Table">
-      <h3 style={{ marginBottom: "20px", fontWeight: "bold" , color : "#fff"}}>
+      <h3 style={{ marginBottom: "20px", fontWeight: "bold", color: "#fff" }}>
         Recent Car Repair Bookings
       </h3>
       <Paper style={{ height: 400, width: "100%" }}>

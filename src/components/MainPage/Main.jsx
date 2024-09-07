@@ -13,7 +13,8 @@ const Main = () => {
       </div>
       <Cards />
       <Table/>
-      
+      {/* <Booking />
+      <TotalPoint /> */}
     </div>
   );
 };

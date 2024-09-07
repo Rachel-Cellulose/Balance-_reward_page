@@ -27,7 +27,7 @@ const Sidebar = () => {
                 <span className='menu_icon'>
                   <item.icon />
                 </span>
-                <span>{item.heading}</span>
+                <span className='menu'>{item.heading}</span>
               </div>
             </div>
           );

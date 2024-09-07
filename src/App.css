@@ -23,5 +23,15 @@ border-radius: 1.2rem;
 overflow: hidden;
 /* background-color: rgb(8 51 68); */
 grid-template-columns: 11rem auto 14rem;
-gap: 3rem;
+gap: 10px;
+}
+
+
+
+@media screen and (max-width:1400px) {
+  .main_container{
+    /* background-color: red; */
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
 }

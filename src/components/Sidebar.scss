@@ -58,7 +58,17 @@
       gap: 1rem;
     }
     .menu_icon {
-      color: gray;
+      color: #105ebd;
     }
   }
+}
+
+@media screen and (max-width:1200px) {
+
+  .sidebar{
+.side_logo{
+    display: none;
+  }
+  }
+  
 }
