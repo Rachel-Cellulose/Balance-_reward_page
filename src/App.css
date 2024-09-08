@@ -34,4 +34,17 @@ gap: 10px;
     grid-template-columns: 10% 50% auto;
     overflow-y: scroll;
   }
+
+  @media screen and (max-width: 1200px) {
+  .main_container{
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .main_container{
+    grid-template-columns: 1fr;
+  } 
+}
 }

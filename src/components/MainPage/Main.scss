@@ -4,15 +4,35 @@
   justify-content: space-evenly;
   width: 100%;
   margin: 10px auto;
-  h1{
-      color: #fff;
+  overflow-x: hidden; /* Prevents horizontal overflow */
+  h1 {
+    color: #fff;
   }
 }
 
+.dashboard {
+  width: calc(100% - 250px); /* Adjust this width based on your sidebar size */
+  max-width: 100%; /* Ensures it doesn't overflow */
+  margin-left: auto;
+  margin-right: auto;
+}
 
-@media screen and (max-width:1400px) {
-    .main_wrapper{
-        justify-content: flex-start;
-        margin-top: 2rem;
-    }
+@media screen and (max-width: 1400px) {
+  .main_wrapper {
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main_wrapper {
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main_wrapper {
+    align-items: center;
+  }
 }

@@ -1,39 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./Sidebar.scss";
-import { SidebarData } from "../Data/Data";
-import logo from "../images/balanceè_logo.jpeg";
+import { FaTachometerAlt, FaMoneyCheckAlt, FaBars } from "react-icons/fa"; // Added FaBars for toggle button
+import logo from "../images/balancee.jpg";
 
+const Sidebar = ({ setActivePage }) => {
+  const [selected, setSelected] = useState(0);
+  const [isOpen, setIsOpen] = useState(false); // Sidebar initially closed on small screens
 
-const Sidebar = () => {
+  const menuItems = [
+    { icon: <FaTachometerAlt />, heading: "Dashboard", page: "dashboard" },
+    { icon: <FaMoneyCheckAlt />, heading: "Cashout", page: "cashout" },
+  ];
 
-    const [selected, setSelected] = useState(0)
+  const handleMenuClick = (index, page) => {
+    setSelected(index);
+    setActivePage(page);
+  };
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen); // Toggle sidebar open/close
+  };
+
   return (
-    <div className="sidebar">
-      <div className="side_logo">
-        <img src={logo} alt="" />
+    <>
+      {/* Toggle button, visible only on smaller screens */}
+      <div className="bars" onClick={toggleSidebar}>
+        <FaBars />
       </div>
 
-      {/* menubar */}
+      {/* Sidebar with dynamic class based on isOpen (only affects mobile screens) */}
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+        <div className="side_logo">
+          <img src={logo} alt="logo" />
+        </div>
 
-      <div className="menu_bar">
-        {SidebarData.map((item, index) => {
-          return (
+        <div className="menu_bar">
+          {menuItems.map((item, index) => (
             <div
               className={selected === index ? "menu_item active" : "menu_item"}
               key={index}
-              onClick={() => setSelected(index)}
+              onClick={() => handleMenuClick(index, item.page)}
             >
-              <div className='menu_tab'>
-                <span className='menu_icon'>
-                  <item.icon />
-                </span>
-                <span className='menu'>{item.heading}</span>
+              <div className="menu_tab">
+                <span className="menu_icon">{item.icon}</span>
+                <span className="menu">{item.heading}</span>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

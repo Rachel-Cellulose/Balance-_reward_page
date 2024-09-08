@@ -20,7 +20,7 @@ const Coupon = () => {
         <div className="coupon-text-two">
           <h1> 10% Referral Discount</h1>
           <h4 className="expiry">
-            for you and a friend after a successful referral{" "}
+            for you and a friend after a successful referral
           </h4>
           < a href="/" > Referral link here</a>
         </div>

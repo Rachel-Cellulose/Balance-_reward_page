@@ -5,6 +5,8 @@
   position: relative;
   transition: all 250ms ease;
   background-color: #fff;
+  width: 250px;
+  left: 0; 
 
   .side_logo {
     display: flex;
@@ -32,12 +34,12 @@
       align-items: center;
       position: relative;
       transition: all 250ms ease;
-      // border-radius: 10px;
       width: 100%;
       color: gray;
-    }
-    :hover {
-      cursor: pointer;
+
+      :hover {
+        cursor: pointer;
+      }
     }
 
     .active {
@@ -57,18 +59,91 @@
       align-items: center;
       gap: 1rem;
     }
+
     .menu_icon {
-      color: #105ebd;
+      color: gray;
+    }
+
+    .menu {
+      color: gray;
     }
   }
 }
 
-@media screen and (max-width:1200px) {
+.bars {
+  display: none; 
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: #0c54ab;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  z-index: 999; 
+}
 
-  .sidebar{
-.side_logo{
-    display: none;
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    .side_logo {
+      display: none;
+    }
+    .menu {
+      display: none;
+    }
+
+    .menuItem > span {
+      display: none;
+    }
+    .logo {
+      display: none;
+    }
   }
+
+  .bars {
+    display: block; 
   }
-  
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    width: 70%;
+    z-index: 9;
+    height: 100%;
+    transition: left 250ms ease; 
+  }
+
+  .sidebar.open {
+    left: 0; 
+  }
+
+  .menuItem > span {
+    display: block;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .menu .menuItem:last-child {
+    position: relative;
+    margin-top: 6rem;
+  }
+
+  .bars {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 9;
+  }
+
+  .close {
+    left: -60%;
+  }
 }
