@@ -1,3 +1,6 @@
+# link to the hosted balanceè project:
+https://balancee.netlify.app/
+
 # 
 This project was bootstrapped with [Create React App]
 
