@@ -3,7 +3,6 @@ import "./CashoutPage.scss";
 
 
 function CashoutPage() {
-  const [rewardBalance] = useState(2000); 
   const [cashoutOption, setCashoutOption] = useState("");
 
   const handleCashout = () => {
