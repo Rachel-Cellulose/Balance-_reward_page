@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Sidebar.scss";
-import { FaTachometerAlt, FaMoneyCheckAlt, FaBars } from "react-icons/fa"; // Added FaBars for toggle button
+import { FaTachometerAlt, FaMoneyCheckAlt, FaBars } from "react-icons/fa";
 import logo from "../images/balancee.jpg";
 
 const Sidebar = ({ setActivePage }) => {
   const [selected, setSelected] = useState(0);
-  const [isOpen, setIsOpen] = useState(false); // Sidebar initially closed on small screens
+  const [isOpen, setIsOpen] = useState(false); 
 
   const menuItems = [
     { icon: <FaTachometerAlt />, heading: "Dashboard", page: "dashboard" },
@@ -18,17 +18,15 @@ const Sidebar = ({ setActivePage }) => {
   };
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen); // Toggle sidebar open/close
+    setIsOpen(!isOpen); 
   };
 
   return (
     <>
-      {/* Toggle button, visible only on smaller screens */}
       <div className="bars" onClick={toggleSidebar}>
         <FaBars />
       </div>
 
-      {/* Sidebar with dynamic class based on isOpen (only affects mobile screens) */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="side_logo">
           <img src={logo} alt="logo" />
